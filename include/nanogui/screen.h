@@ -18,6 +18,8 @@
 
 NAMESPACE_BEGIN(nanogui)
 
+float NANOGUI_EXPORT get_pixel_ratio(GLFWwindow *window);
+
 /**
  * \class Screen screen.h nanogui/screen.h
  *

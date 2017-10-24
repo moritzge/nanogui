@@ -23,7 +23,10 @@
 #  define NOMINMAX
 #  undef APIENTRY
 
+#ifndef WIN32_LEAN_AND_MEAN
 #  define WIN32_LEAN_AND_MEAN
+#endif // WIN32_LEAN_AND_MEAN
+
 #  include <windows.h>
 
 #  define GLFW_EXPOSE_NATIVE_WGL
@@ -44,7 +47,7 @@ static bool gladInitialized = false;
 #endif
 
 /* Calculate pixel ratio for hi-dpi devices. */
-static float get_pixel_ratio(GLFWwindow *window) {
+float get_pixel_ratio(GLFWwindow *window) {
 #if defined(_WIN32)
     HWND hWnd = glfwGetWin32Window(window);
     HMONITOR monitor = MonitorFromWindow(hWnd, MONITOR_DEFAULTTONEAREST);
